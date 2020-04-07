@@ -1,0 +1,19 @@
+{
+    "name": "mathsgod/jwt-recaptcha",
+    "description": "using json web token for recaptcha",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "firebase/php-jwt": "^5.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raymond Chong",
+            "email": "mathsgod@yahoo.com"
+        }
+    ]
+}
