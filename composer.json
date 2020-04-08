@@ -1,6 +1,6 @@
 {
     "name": "mathsgod/jwt-recaptcha",
-    "description": "using json web token for recaptcha",
+    "description": "using json web token for recaptcha, without session, without database",
     "type": "library",
     "require": {
         "php": ">=7.0",
