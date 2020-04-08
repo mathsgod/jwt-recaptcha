@@ -54,7 +54,7 @@ class ReCaptcha
         ];
     }
 
-    public function verify(string $token, string $code): bool
+    public function verify(string $code, string $token): bool
     {
         $token = (array) JWT::decode($token, $this->secret, ["HS256"]);
 

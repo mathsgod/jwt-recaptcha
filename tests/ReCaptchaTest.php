@@ -23,8 +23,10 @@ class ReCaptchaTest extends TestCase
         $this->assertArrayHasKey("token", $hash);
         $this->assertArrayHasKey("image", $hash);
 
-        $this->assertTrue($re->verify($hash["token"], $code));
-        $this->assertFalse($re->verify($hash["token"], uniqid()));
+
+        $re2 = new ReCaptcha($secret);
+        $this->assertTrue($re2->verify($code, $hash["token"]));
+        $this->assertFalse($re2->verify("123123", $hash["token"]));
     }
 
     public function test_other()
@@ -42,7 +44,8 @@ class ReCaptchaTest extends TestCase
         $this->assertArrayHasKey("token", $hash);
         $this->assertArrayHasKey("image", $hash);
 
-        $this->assertTrue($re->verify($hash["token"], $code));
-        $this->assertFalse($re->verify($hash["token"], uniqid()));
+        $re2 = new ReCaptcha($secret);
+        $this->assertTrue($re2->verify($code, $hash["token"]));
+        $this->assertFalse($re2->verify("abcd", $hash["token"]));
     }
 }
