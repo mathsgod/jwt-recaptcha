@@ -15,5 +15,13 @@
             "name": "Raymond Chong",
             "email": "mathsgod@yahoo.com"
         }
-    ]
+    ],
+    "autoload": {
+        "classmap": [
+            "class"
+        ],
+        "psr-4": {
+            "R\\": "src/"
+        }
+    }
 }
