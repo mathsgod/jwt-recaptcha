@@ -23,5 +23,8 @@
         "psr-4": {
             "R\\": "src/"
         }
+    },
+    "scripts": {
+        "test": "phpunit tests"
     }
 }
