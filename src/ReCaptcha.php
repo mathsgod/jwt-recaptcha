@@ -3,6 +3,7 @@
 namespace R;
 
 use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 use Securimage;
 
 class ReCaptcha
@@ -56,7 +57,7 @@ class ReCaptcha
 
     public function verify(string $code, string $token): bool
     {
-        $token = (array) JWT::decode($token, $this->secret, ["HS256"]);
+        $token = (array) JWT::decode($token, new Key($this->secret, "HS256"));
 
         return password_verify($code, $token["hash"]);
     }
