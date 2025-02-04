@@ -3,7 +3,7 @@ using jwt for recaptcha in php
 
 ## Server generate hash
 ```php
-$secret;
+$secret="your secret key";
 
 $re = new ReCaptcha($secret);
 $hash = $re->hash();

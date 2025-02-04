@@ -1,4 +1,4 @@
-<?
+<?php
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
 use R\ReCaptcha;
@@ -13,7 +13,25 @@ $re = new ReCaptcha($secret,  [
     "perturbation" => 0.5
 ]);
 
-print_r($re->hash());
+$hash=$re->hash();
 
 
-echo $re->getCode();
+//echo $re->getCode();
+?>
+
+<html>
+    <head>
+        <title>ReCaptcha</title>
+    </head>
+    <body>
+        <img src="<?php echo $hash['image']; ?>" />
+        <form method="post">
+            <input type="text" name="code" />
+            <input type="hidden" name="token" value="<?php echo $hash['token']; ?>" />
+            <input type="submit" />
+        </form>
+    </body>
+</html>
+
+
+
